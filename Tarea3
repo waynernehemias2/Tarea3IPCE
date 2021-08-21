@@ -1,1 +1,117 @@
+Definición Clase Estudiante
 
+[20]
+0 s
+class estudiante:
+  def __init__(self, carne, nombre, edad, direccion, telefono, email, carrera, puesto):
+    self.carne = carne
+    self.nombre = nombre
+    self.edad = edad
+    self.direccion = direccion
+    self.telefono = telefono
+    self.email = email
+    self.carrera = carrera
+    self.puesto = puesto
+Definicón Clase Nodo
+
+[22]
+0 s
+class nodo:
+  def __init__(self, estudiante=None, siguiente=None, anterior=None):
+    self.estudiante = estudiante
+    self.siguiente = siguiente
+    self.anterior = anterior
+Definición de la clase Lista Doblemente Enlazada
+
+[23]
+0 s
+class lista_doble:
+  def __init__(self):
+    self.primero = None
+
+  def insertar(self, estudiante):
+    if self.primero is None:
+      self.primero = nodo(estudiante=estudiante)
+    else:
+      actual = nodo(estudiante=estudiante, siguiente=self.primero)
+      self.primero.anterior = actual
+
+Creación de objetos Estudiante
+
+[24]
+0 s
+e1 = estudiante(201915059, "Gerson Ortiz", 20, "9 calle 10.02 zona 1", 24400101, "gerson.ortiz@gmail.com", "Ingeniería en Sistemas", "Programador Jr")
+e2 = estudiante(201915860, "Karen Hurtarte", 21, "7 calle 10.02 zona 1", 24400101, "karen.hurarte@gmail.com", "Ingeniería en Sistemas", "Programador Jr")
+e3 = estudiante(201915861, "Luis Mendez", 21, "8 calle 10.02 zona 1", 24400101, "luis.mendez@gmail.com", "Ingeniería en Sistemas", "Programador Jr")
+Inserción
+
+[25]
+0 s
+lista_d = lista_doble()
+lista_d.insertar(e1)
+lista_d.insertar(e2)
+lista_d.insertar(e3)
+Recorrer la lista
+
+[26]
+0 s
+lista_d.recorrer()
+carne: 201915861 nombre: Luis Mendez email: luis.mendez@gmail.com ->
+carne: 201915860 nombre: Karen Hurtarte email: karen.hurarte@gmail.com ->
+carne: 201915059 nombre: Gerson Ortiz email: gerson.ortiz@gmail.com ->
+Eliminar el nodo del medio de la lista
+
+[27]
+0 s
+lista_d.eliminar(201915860)
+True
+[28]
+0 s
+
+lista_d.recorrer()
+carne: 201915861 nombre: Luis Mendez email: luis.mendez@gmail.com ->
+carne: 201915059 nombre: Gerson Ortiz email: gerson.ortiz@gmail.com ->
+Eliminar el nodo primero de la lista
+
+[29]
+0 s
+lista_d.eliminar(201915861)
+True
+[30]
+0 s
+
+lista_d.recorrer()
+carne: 201915059 nombre: Gerson Ortiz email: gerson.ortiz@gmail.com ->
+Eliminar el último nodo de la lista
+
+[31]
+0 s
+lista_d.eliminar(201915059)
+True
+True
+
+[32]
+0 s
+lista_d.recorrer()
+Eliminar nodo a nodo de la lista
+
+[33]
+0 s
+lista_d.eliminar(201915861)
+lista_d.recorrer()
+[34]
+0 s
+lista_d.eliminar(201915860)
+lista_d.recorrer()
+[35]
+0 s
+lista_d.eliminar(201915059)
+lista_d.recorrer()
+Búsqueda
+
+[36]
+0 s
+lista_d.buscar(201915860)
+lista_d.buscar(5623452)
+El nodo no existe en la lista
+El nodo no existe en la lista
